@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Reward Ad</title>
+
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
+    <link rel="icon" href="favicon.ico"/>
+<script type="text/javascript" src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
+  </head>
+  <body>
+<div id="applixir_vanishing_div" hidden>
+    <iframe id="applixir_parent" allow="autoplay ; fullscreen"></iframe>
+</div>
+<script type="text/javascript">
+    function adStatusCallback(status)
+    {
+        switch(status) {
+
+            case "ad-started":
+            {
+                // Code (if needed) to execute for “ad-started”
+            }
+                break;
+
+            case "network-error":
+            {
+                // Code (if needed) for “network-error”
+            }
+                break;
+
+            case "ad-watched":
+            {
+                // Code (if needed) for “ad-watched”
+            }
+                break;
+
+            case "ads-unavailable":
+            {
+                // Code (if needed) for ads-unavaliable
+            }
+                break;
+
+            case "ad-interrupted":
+            {
+                // Code (if needed) for ad-interrupted
+            }
+                break;
+
+            case "sys-closing":
+            {
+                // Code (if needed) for “sys-closing” – the final message before closing
+            }
+                break;
+
+            case "cors-error":
+            {
+                // “cors-error” is due to config problems and should only occur in test
+            }
+                break;
+
+            case "ad-blocker":
+            {
+                // The user has an ad blocker installed. Provide a message that they can’t
+                // get any rewards unless they disable their ad blocker for this app
+            }
+                break;
+        }
+        if(typeof Android !== 'undefined' && Android.adStatusCallback) Android.adStatusCallback(status)
+        if(typeof parent !== 'undefined') parent.postMessage(status, '*')
+
+    }
+    var options = {
+        zoneId: 2050,  // from Game panel on Games page
+        accountId: 0, // from Game panel on Games page
+        gameId: 0, // from Game panel on Games page
+        adStatusCb: adStatusCallback,
+    };
+    invokeApplixirVideoUnit(options);
+
+</script>
+</body>
+</html>

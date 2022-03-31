@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92d0fe865c83c143aecf235d84b620e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Url: http://0441.design/applixir
 --- !u!4 &223974228
 Transform:
   m_ObjectHideFlags: 0
@@ -344,7 +345,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 223974227}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
-        m_MethodName: ButtonClick
+        m_MethodName: PlayVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
